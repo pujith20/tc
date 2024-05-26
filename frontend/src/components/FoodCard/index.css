@@ -1,0 +1,93 @@
+/* index.css */
+
+.flip-card {
+  width: 300px;
+  height: 400px; /* Adjust height as needed */
+  perspective: 1000px;
+  margin: 20px; /* Adjust margin as needed */
+  position: relative;
+  overflow: hidden;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(100px); /* Initially translated down */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth transition */
+}
+
+.flip-card.visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Translated to original position */
+}
+
+.flip-card:hover .hover-overlay {
+  opacity: 0.7;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth transition */
+}
+
+.flip-card.visible .overlay {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s; /* Delay to ensure card appears first */
+}
+
+.overlay h2 {
+  color: white;
+  font-size: 24px;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.overlay .btn {
+  margin-top: 10px;
+}
+
+/* Hover overlay for opacity effect */
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease-in-out;
+}
+
+.flip-card:hover .hover-overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Modal backdrop */
+.modal-backdrop.show {
+  opacity: 0.5;
+  transition: opacity 0.3s ease-out;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  opacity: 0;
+  z-index: 1040;
+}
+
+/* Modal transition */
+.modal.show .modal-dialog {
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal .modal-dialog {
+  transform: translateY(-30%);
+  opacity: 0;
+}

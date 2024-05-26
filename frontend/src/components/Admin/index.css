@@ -1,0 +1,59 @@
+/* index.css */
+
+.admin-con {
+  display: flex;
+  background-color: #f0f0f0;
+  height: 100vh;
+}
+
+.sidbar {
+  width: 20%;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+.admin-nav-title {
+  font-family: cursive;
+}
+.item-container{
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.menu-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu-list li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.item-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.item img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.item img:hover {
+  opacity: 0.8;
+}

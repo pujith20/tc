@@ -1,0 +1,42 @@
+.preloader {
+  width: 100%;
+  height: 100vh;
+  background: #101010;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 1;
+  transition: opacity 5s ease; /* Adjust the transition duration to 5 seconds */
+}
+
+.p {
+  color: #fff;
+  margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+.progress-container {
+  width: 80%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 0;
+  height: 100%;
+  background: #fff;
+  transform-origin: left;
+  animation: fillProgressBar 5s ease forwards;
+}
+
+@keyframes fillProgressBar {
+  to {
+    width: 100%;
+  }
+}

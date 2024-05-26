@@ -1,0 +1,444 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 80px;
+  z-index: 100;
+  transition: 0.5s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+header .logo {
+  position: relative;
+  top: 0;
+  transition: 0.6s;
+}
+
+.logo-img {
+  width: 100px;
+}
+
+header .toggle {
+  position: relative;
+  top: 7px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+header .toggle:before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  width: 100%;
+  height: 2px;
+  background: #000;
+}
+header .toggle:after {
+  content: "";
+  position: absolute;
+  bottom: 7px;
+  width: 100%;
+  height: 2px;
+  background: #000;
+}
+.banner.active header .toggle:before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.banner.active header .toggle:after {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  transition: transform 0.5s ease;
+  z-index: 2;
+}
+
+.banner.active {
+  transform: translateX(-400px);
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navigation-list-con {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+.navigation-list-con li {
+  margin-bottom: 24px;
+}
+.navigation-list-con li a {
+  color: black;
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.content {
+  max-width: 2600px;
+  width: 1500px;
+  display: flex;
+  justify-content: space-between;
+}
+.inside-content {
+  max-width: 600px;
+  margin-top: 10%;
+}
+.inside-content h2 {
+  color: #000;
+  font-size: 2.5em;
+}
+.inside-content h2 span {
+  color: orange;
+  font-size: 1.2em;
+  font-weight: 300;
+}
+.inside-content p {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.inside-content a {
+  position: relative;
+  margin-top: 30px;
+  background: #fff;
+  color: black;
+  padding: 10px 30px;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.slider {
+  width: 500px;
+  min-width: 200px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 5s;
+  animation-name: animate;
+  animation-play-state: running;
+  animation-timing-function: ease-in-out;
+  animation-duration: 20s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+@keyframes animate {
+  0% {
+    background-image: url("../assets/biriyani.avif");
+  }
+  50% {
+    background-image: url("../assets/donut.png");
+  }
+  100% {
+    background-image: url("../assets/drinks.png");
+  }
+}
+
+.navigation {
+  display: none;
+}
+
+.navigation.active {
+  display: flex;
+  align-items: center;
+}
+
+.card-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-left: 60px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  height: 400px;
+  margin: 24px;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+  padding-bottom: 5%;
+}
+.card-img {
+  align-self: center;
+  height: 170px;
+  width: auto;
+  margin-top: 48px;
+  margin-bottom: 30px;
+}
+.food-items-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.food-items-container span {
+  color: orange;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+footer {
+  background-color: #111;
+}
+.footerContainer {
+  width: 100%;
+  padding: 70px 30px 20px;
+}
+.socialIcons {
+  display: flex;
+  justify-content: center;
+}
+.socialIcons a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 50%;
+}
+.socialIcons a i {
+  font-size: 2em;
+  color: black;
+  opacity: 0.9;
+}
+/* Hover affect on social media icon */
+.socialIcons a:hover {
+  background-color: #111;
+  transition: 0.5s;
+}
+.socialIcons a:hover i {
+  color: white;
+  transition: 0.5s;
+}
+.footerNav {
+  margin: 30px 0;
+}
+.footerNav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+.footerNav ul li a {
+  color: white;
+  margin: 20px;
+  text-decoration: none;
+  font-size: 1.3em;
+  opacity: 0.7;
+  transition: 0.5s;
+}
+.footerNav ul li a:hover {
+  opacity: 1;
+}
+.footerBottom {
+  background-color: #000;
+  padding: 20px;
+  text-align: center;
+}
+.footerBottom p {
+  color: white;
+}
+.designer {
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin: 0px 5px;
+}
+@media (max-width: 800px) {
+  .footerNav ul {
+    flex-direction: column;
+  }
+  .footerNav ul li {
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+  }
+  .socialIcons a {
+    padding: 8px;
+    margin: 4px;
+  }
+}
+
+/* Media queries for max-width: 800px */
+@media (max-width: 800px) {
+  header{
+    padding: 25px 20px;
+  }
+  /* Navigation */
+  .navigation {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    transition: right 0.5s ease;
+  }
+  .navigation.active {
+    right: -60%; /* Show when active */
+  }
+  .navigation ul{
+    width: 100%;
+  }
+  .navigation ul li {
+    margin-bottom: 10px;
+  }
+  .navigation ul li a {
+    font-size: 1.5em;
+  }
+
+  /* Banner */
+  .content {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .content div {
+    max-width: unset;
+    text-align: center;
+    margin-top: 5%;
+  }
+  .content h2 {
+    font-size: 2em;
+  }
+  .content h2 span {
+    font-size: 1em;
+  }
+  .content p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .content a {
+    font-size: 1em;
+  }
+  .slider {
+    width: 100%;
+    height: 450px;
+  }
+
+  /* Card Container */
+  .card-container {
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .card {
+    margin: 20px;
+  }
+  .card-img{
+    margin-top: 12px;
+    height: 150px;
+    width: auto;
+  }
+
+  /* Food Items Container */
+  .food-items-container span {
+    font-size: 1.5em;
+    margin-bottom: 0;
+  }
+  .banner.active {
+    transform: translateX(-270px);
+  }
+  .banner{
+    padding-top: 100px;
+  }
+  .content{
+    padding: 0;
+  }
+}
+header .toggle {
+  display: block;
+  position: relative;
+  top: 7px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 101; /* Ensure it's above the banner */
+}
+
+header .toggle:before,
+header .toggle:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  transition: 0.6s;
+}
+
+header .toggle:before {
+  top: 7px;
+}
+
+header .toggle:after {
+  bottom: 7px;
+}
+
+.banner.active header .toggle:before {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.banner.active header .toggle:after {
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.search-bar{
+  display: flex;
+  border: 1px solid grey;
+  border-radius: 24px;
+  padding: 6px;
+}
+.search-bar input{
+  width: 250px;
+  border: none;
+  outline: none;
+  padding: 5px;
+}
+.search-bar img{
+  height: 20px;
+  align-self: center;
+}

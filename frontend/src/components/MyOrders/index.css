@@ -1,0 +1,274 @@
+.my-orders{
+  padding: 20px;
+  display: flex;
+}
+
+.orders-con {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-right: 24px;
+  flex: 1;
+}
+
+
+.order-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order{
+  display: flex;
+  flex-direction: column;
+  width: 65vw;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  gap: 10px;
+}
+
+.order-image img {
+  max-width: 100px;
+  max-height: 100px;
+  width: 100%;
+  height: auto;
+}
+
+.quantity-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.quantity-controls button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.quantity-controls p{
+  align-self: center;
+  padding-top: 12px;
+}
+
+.order-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  padding: 0 20px;
+}
+
+.order-delete {
+  display: flex;
+  align-items: center;
+}
+
+.order-delete .delete-btn {
+  background: none;
+  border: none;
+}
+
+.order-price {
+  font-weight: bold;
+  text-align: right;
+}
+
+.summary-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+} 
+.delete-img{
+  height: 30px;
+}
+.checkout-con{
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: 0.5s;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
+}
+.summary-title{
+  letter-spacing: 3px;
+  font-size: 2em;
+  font-weight: 100;
+}
+.width-box{
+  min-width: 160px;
+}
+/* For screens smaller than 768px (typical smartphones) */
+@media (max-width: 767px) {
+  .my-orders {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+  }
+
+  .orders-con {
+    width: 100%; /* Take full width */
+    padding: 24px;
+  }
+
+  .order {
+    width: 100%; /* Take 90% of the screen width */
+    display: flex;
+    flex-direction: row; /* Stack elements vertically */
+    justify-content: space-evenly;
+  }
+
+  .delete-img{
+    height: 20px;
+  }
+
+  .order-details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .order-image-quantity,
+  .order-info,
+  .order-delete {
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+  .order-image img {
+    max-width: 100px;
+    max-height: 100px;
+    width: 100%;
+    height: auto;
+  }
+
+  .order-info {
+    padding: 10px 0;
+  }
+
+  .order-delete {
+    width: 100%;
+    justify-content: center;
+  }
+  .order-details {
+    align-items: center;
+  }
+
+  .quantity-controls {
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .order-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+    padding-top: 0;
+  }
+  .checkout-con {
+    width: 90%; /* Take 90% of the screen width */
+    margin-top: 20px; /* Add some space between orders and checkout */
+  }
+
+  .summary-title {
+    font-size: 1.5em; /* Adjust font size */
+    text-align: center; /* Center text */
+  }
+
+  .width-box {
+    min-width: unset; /* Remove minimum width */
+    text-align: center; /* Center text */
+  }
+}
+/* For screens smaller than 768px (typical smartphones) */
+@media (max-width: 767px) {
+  .order-details {
+    width: 100%;
+    flex-direction: row; /* Display details and delete button in a row */
+    justify-content: space-between; /* Ensure space between details and delete button */
+  }
+
+  .order-delete {
+    align-self: center; /* Center the delete button vertically */
+  }
+
+  .delete-img {
+    height: 20px; /* Adjust the height of the delete button icon */
+  }
+}
+
+/* index.css */
+.spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1000;
+}
+
+.order-confirmation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.order-confirmation h2 {
+  font-size: 24px;
+  color: green;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.order-confirmation {
+  text-align: center;
+  padding: 20px;
+}
+
+
+@media (max-width: 480px) {
+  .order-image img {
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  .quantity-controls button {
+    padding: 5px;
+  }
+
+  .order-info p {
+    font-size: 14px;
+  }
+
+  .checkout-con {
+    padding: 10px;
+  }
+
+  .summary-title {
+    font-size: 16px;
+  }
+
+  .spinner-container {
+    height: 70vh;
+  }
+}

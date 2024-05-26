@@ -1,0 +1,110 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+.about-me{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #fff;
+}
+.about-me-card{
+  position: relative;
+  width: 350px;
+  height: 190px;
+  background-color: #fff;
+  transition: 0.5s;
+}
+.about-me-card:hover{
+  height: 450px;
+}
+.about-me-card .lines{
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  overflow: hidden;
+}
+.about-me-card .lines::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 600px;
+  height: 120px;
+  background: linear-gradient(transparent,orange,orange,orange,transparent);
+  animation: aboutmeanimate 4s linear infinite;
+}
+@keyframes aboutmeanimate{
+  0%{
+    transform: translate(-50%,-50%) rotate(0deg);
+  }
+  100%{
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+}
+.about-me-card .lines::after{
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: #fff;
+}
+.about-me-card .imgBx{
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 110px;
+  background: #fff;
+  transition: 0.5s;
+  z-index: 10;
+  overflow: hidden;
+}
+.about-me-card:hover .imgBx{
+  width: 250px;
+  height: 110px;
+}
+
+.about-me-card .imgBx img{
+  top: 10px;
+  left: 10px;
+  margin-bottom: 0;
+  border-radius: 50%;
+  height: 100px;
+}
+.about-me-card .content{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.about-me-card .content .details{
+  padding: 40px;
+  text-align: center;
+  width: 100%;
+  transition: 0.5s;
+  margin-top: 0;
+}
+.about-me-card .content .details h2{
+  font-weight: 500;
+  font-size: 1.7em;
+}
+.about-me-card .content .details span{
+  color: orange;
+  font-weight: 500;
+  font-size: 16px;
+}
+.about-me-card .content .details .data{
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  margin: 10px 0;
+}
