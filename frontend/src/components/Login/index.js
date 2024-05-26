@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     axios
-      .post("http://localhost:5000/user/login", { username, password })
+      .post("https://tastycorner.onrender.com/user/login", { username, password })
       .then((response) => {
         const { token,email } = response.data;
         console.log(response.data);

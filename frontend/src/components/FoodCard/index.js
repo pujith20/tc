@@ -64,7 +64,7 @@ const FoodCard = ({title,image,reviews,description,productId,price,rating,}) => 
   const onAddCart = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/cart/add",
+        "https://tastycorner.onrender.com/cart/add",
         { productId, title, price, rating },
         {
           headers: {

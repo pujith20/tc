@@ -31,7 +31,7 @@ const MyOrders = () => {
       if (token) {
         // Fetch user cart items
         const response = await axios.get(
-          "http://localhost:5000/cart/get-items",
+          "https://tastycorner.onrender.com/cart/get-items",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -43,7 +43,7 @@ const MyOrders = () => {
         // Fetch image URLs for products in the cart
         const productIds = Object.keys(response.data.cart);
         const imageResponse = await axios.get(
-          "http://localhost:5000/products/pics",
+          "https://tastycorner.onrender.com/products/pics",
           {
             params: {
               ids: productIds,
@@ -64,7 +64,7 @@ const MyOrders = () => {
         const newQuantity = item.quantity + quantityChange;
         if (newQuantity > 0) {
           await axios.put(
-            `http://localhost:5000/cart/update/${id}`,
+            `https://tastycorner.onrender.com/cart/update/${id}`,
             { quantity: newQuantity },
             {
               headers: {
@@ -85,7 +85,7 @@ const MyOrders = () => {
   const removeFromCart = async (id) => {
     const token = Cookies.get("jwt_token");
     if (token) {
-      await axios.delete("http://localhost:5000/cart/remove", {
+      await axios.delete("https://tastycorner.onrender.com/cart/remove", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -125,7 +125,7 @@ const MyOrders = () => {
       const token = Cookies.get("jwt_token");
       if (token) {
         await axios.post(
-          "http://localhost:5000/confirm/checkout",
+          "https://tastycorner.onrender.com/confirm/checkout",
           { email },
           {
             headers: {

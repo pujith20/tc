@@ -26,7 +26,7 @@ const Home = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const result = await axios.get("http://localhost:5000/products/");
+        const result = await axios.get("https://tastycorner.onrender.com/products/");
         setFoodItems(result.data.products);
       } catch (err) {
         console.log("Error fetching products: ", err);

@@ -41,7 +41,7 @@ const AddProduct = () => {
     e.preventDefault();
     console.log(formData);
     axios
-      .post("http://localhost:5000/products/add-product", formData)
+      .post("https://tastycorner.onrender.com/products/add-product", formData)
       .then((res) => {
         console.log("Data uploaded successfully !!");
         alert("Uploaded successfully!!")

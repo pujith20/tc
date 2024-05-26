@@ -12,7 +12,7 @@ const Signup = () => {
   const onAddCredentials = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/user/add-user", { mail, username, password })
+      .post("https://tastycorner.onrender.com/user/add-user", { mail, username, password })
       .then((res) => {
         console.log("Data uploaded successfully !!");
         setGmail("");
